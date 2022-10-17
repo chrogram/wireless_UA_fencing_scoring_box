@@ -14,7 +14,7 @@ const uint8_t pipe2LED  =  3;
 
 void setup() {
 
-//  Serial.begin(115200);
+  Serial.begin(115200);
   radio.begin();
   radio.openReadingPipe(0, address1);
   radio.openReadingPipe(1, address2);
@@ -29,7 +29,7 @@ void setup() {
 
 void loop() {
   if (radio.available(&pipe1)) {
-    
+
     // digitalWrite(pipe1LED, HIGH);
     // delay(100);
     // digitalWrite(pipe1LED, LOW);
