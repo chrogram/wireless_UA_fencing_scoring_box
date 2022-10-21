@@ -10,12 +10,15 @@
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
+#define RF24_SPI_SPEED 5000000
+
 
 RF24 radio(0, 1); // CE, CSN
 
 const byte address[6] = "00001";
 
 void setup() {
+  Serial.begin(115200);
   radio.begin();
   radio.openWritingPipe(address);
   radio.setPALevel(RF24_PA_MIN);
@@ -26,5 +29,12 @@ void setup() {
 
 void loop() {
   const char text[] = "Hello World";
-  radio.write(&text, sizeof(text));
+  bool report = radio.write(&text, sizeof(text));
+  
+  if (report) {
+    Serial.println(millis());
+  }
+
+//  radio.write(&text, sizeof(text));
+//  Serial.println(millis());
 }
