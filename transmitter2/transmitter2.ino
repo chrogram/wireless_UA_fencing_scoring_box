@@ -26,13 +26,17 @@ void setup() {
 
 }
 
+int data[3] = {2, 12001, 13001}; //ID weapon lame
+
 void loop() {
   
   network.update();
   RF24NetworkHeader header8(node00);
-  int data[3] = {2, 201, 203}; //ID weapon lame
-  bool status = network.write(header8, &data, sizeof(data));
   
+  bool status = network.write(header8, &data, sizeof(data));
+
+  data[1]++;
+  data[2]++;
     
   if (status) {
     Serial.println(millis());
