@@ -4,11 +4,9 @@
 #include <RF24Network.h>
 #define R24_SPI_SPEED 5000000
 
-//RF24 radio(7, 8); // CE, CSN
-RF24 radio(0, 1); //xiao config
+RF24 radio(0, 1); //CE, CSN
 RF24Network network(radio);
 
-const byte address[6] = "00001";
 
 const uint16_t this_node = 02;
 const uint16_t node00 = 00;
@@ -16,12 +14,9 @@ const uint16_t node00 = 00;
 void setup() {
   Serial.begin(115200);
   radio.begin();
-//  radio.openWritingPipe(address);
   radio.setPALevel(RF24_PA_MIN);
   radio.setDataRate(RF24_250KBPS);
-//  radio.setChannel(108);
   network.begin(90, this_node);
-//  radio.stopListening();
   Serial.println("Transmitter 2 on 00002");
 
 }
