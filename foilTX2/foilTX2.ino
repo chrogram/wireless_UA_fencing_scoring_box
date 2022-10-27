@@ -16,8 +16,8 @@ const uint16_t node00 = 00;
 //============
 
 const uint8_t groundPin = A4;    // Ground  - Analog
-const uint8_t lamePin   = A5;    // Lame    - Analog (Epee return path)
-const uint8_t weaponPin = A6;    // Weapon  - Analog
+const uint8_t weaponPin   = A5;    // Lame    - Analog (Epee return path)
+const uint8_t lamePin = A6;    // Weapon  - Analog
 
 
 //=========================
@@ -49,7 +49,7 @@ void setup() {
 // Main Loop
 //============
 void loop() {
-  while(1) {
+
   
   
     // read analog pins
@@ -66,9 +66,12 @@ void loop() {
     
     if (status) {
       Serial.println(millis());
+      Serial.print("Weapon: ");
+      Serial.println(weapon);
+      Serial.print("Lame: ");
+      Serial.println(lame);
     }
   
         
-  
-   }
+
 }

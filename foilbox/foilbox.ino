@@ -275,7 +275,6 @@ void signalHits() {
 //======================
 void resetValues() {
    delay(BUZZERTIME);             // wait before turning off the buzzer
-//   digitalWrite(buzzerPin,  LOW);
    noTone(buzzerPin);
    delay(LIGHTTIME-BUZZERTIME);   // wait before turning off the lights
    digitalWrite(onTargetA,  LOW);
