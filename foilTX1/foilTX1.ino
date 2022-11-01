@@ -5,7 +5,7 @@
 #define RF24_SPI_SPEED 5000000
 
 
-RF24 radio(0, 1); // CE, CSN
+RF24 radio(1, 7); // CE, CSN
 RF24Network network(radio);
 
 const uint16_t this_node = 01;
@@ -15,9 +15,9 @@ const uint16_t node00 = 00;
 // Pin Setup
 //============
 
-const uint8_t groundPin = A4;    // Ground  - Analog
-const uint8_t weaponPin   = A5;    // Lame    - Analog (Epee return path)
-const uint8_t lamePin = A6;    // Weapon  - Analog
+const uint8_t groundPin = A3;    // Ground  - Analog
+const uint8_t weaponPin   = A4;    // Lame    - Analog (Epee return path)
+const uint8_t lamePin = A5;    // Weapon  - Analog
 
 
 //=========================

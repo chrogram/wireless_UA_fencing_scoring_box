@@ -9,7 +9,7 @@
 #define LIGHTTIME 3000
 
 // -----Radio Setup-------------
-RF24 radio(0, 1); //CE, CSN
+RF24 radio(1, 7); //CE, CSN
 
 RF24Network network(radio);
 
@@ -45,12 +45,12 @@ bool one = false;
 bool two = false;
 
 // Pin Setup
-const uint8_t onTargetA = 3;
-const uint8_t offTargetA = 4;
-const uint8_t onTargetB = 5;
-const uint8_t offTargetB = 6;
+const uint8_t onTargetA = 2;
+const uint8_t offTargetA = 3;
+const uint8_t onTargetB = 4;
+const uint8_t offTargetB = 5;
 
-const uint8_t buzzerPin = 2;
+const uint8_t buzzerPin = 6;
 
 void setup()
 {
