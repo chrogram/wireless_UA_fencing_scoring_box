@@ -50,7 +50,7 @@ const uint8_t offTargetA = 4;
 const uint8_t onTargetB = 5;
 const uint8_t offTargetB = 6;
 
-const uint8_t buzzerPin = 3;
+const uint8_t buzzerPin = 2;
 
 void setup()
 {
@@ -63,7 +63,7 @@ void setup()
   pinMode(offTargetB, OUTPUT);
   pinMode(buzzerPin, OUTPUT);
 
-  testLights();
+//  testLights();
 
   radio.begin();
   radio.setPALevel(RF24_PA_MIN);
@@ -117,7 +117,7 @@ void loop(){
   if((one == true) && (two == true)){
     Serial.println("BOTH TX GOOD");
     printData();
-    //TODO implement foilbox
+    
     signalHits();
     foil();
     
@@ -242,6 +242,8 @@ void resetValues() {
 
   delay(BUZZERTIME);             // wait before turning off the buzzer
 //  noTone(buzzerPin);
+//  digitalWrite(buzzerPin,  LOW);
+  tone(buzzerPin, 0, 1);
   delay(LIGHTTIME-BUZZERTIME);   // wait before turning off the lights
   digitalWrite(onTargetA,  LOW);
   digitalWrite(offTargetA, LOW);
@@ -269,7 +271,9 @@ void signalHits() {
       digitalWrite(offTargetB, hitOffTargB);
       digitalWrite(onTargetB,  hitOnTargB);
 //      digitalWrite(buzzerPin,  HIGH);
-//      tone(buzzerPin, 2349);
+      tone(buzzerPin, 2349);
+
+
 #ifdef DEBUG
       String serData = String("hitOnTargA  : ") + hitOnTargA  + "\n"
                             + "hitOffTargA : "  + hitOffTargA + "\n"
