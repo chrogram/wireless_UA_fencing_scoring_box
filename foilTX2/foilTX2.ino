@@ -15,9 +15,9 @@ const uint16_t node00 = 00;
 // Pin Setup
 //============
 
-const uint8_t groundPin = A3;    // Ground  - Analog
-const uint8_t weaponPin   = A4;    // Lame    - Analog (Epee return path)
-const uint8_t lamePin = A5;    // Weapon  - Analog
+const uint8_t lamePin = A3;    // Lame  - Analog
+const uint8_t weaponPin = A4;    // Weapon    - Analog
+const uint8_t groundPin = A5;    // Ground  - Analog
 
 
 //=========================
