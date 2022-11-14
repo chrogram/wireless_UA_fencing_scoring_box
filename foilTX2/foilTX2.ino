@@ -50,7 +50,7 @@ void setup() {
 //============
 void loop() {
 
-  
+//    Serial.println("2");
   
     // read analog pins
     weapon = analogRead(weaponPin);
@@ -66,6 +66,7 @@ void loop() {
     
     if (status) {
       Serial.println(millis());
+      Serial.println("((2))");
       Serial.print("Weapon: ");
       Serial.println(weapon);
       Serial.print("Lame: ");

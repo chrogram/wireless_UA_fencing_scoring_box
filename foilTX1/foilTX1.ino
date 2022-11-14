@@ -66,6 +66,7 @@ void loop() {
     
     if (status) {
       Serial.println(millis());
+      Serial.println("((1))");
       Serial.print("Weapon: ");
       Serial.println(weapon);
       Serial.print("Lame: ");

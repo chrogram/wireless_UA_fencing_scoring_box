@@ -4,7 +4,7 @@
 #define RF24_SPI_SPEED 5000000
 
 
-RF24 radio(0, 1); // CE, CSN
+RF24 radio(1, 7); // CE, CSN
 
 const byte address[6] = "00001";
 
