@@ -1,4 +1,4 @@
-v
+
 
 //============
 // #defines
@@ -256,7 +256,7 @@ void signalHits() {
       digitalWrite(offTargetB, hitOffTargB);
       digitalWrite(onTargetB,  hitOnTargB);
 //      digitalWrite(buzzerPin,  HIGH);
-      tone(buzzerPin, 2349);
+      // tone(buzzerPin, 2349);
 #ifdef DEBUG
       String serData = String("hitOnTargA  : ") + hitOnTargA  + "\n"
                             + "hitOffTargA : "  + hitOffTargA + "\n"
